@@ -1,0 +1,12 @@
+export const CREATE_GAME = 'CREATE_GAME';
+export const CREATE_GAME_LOCAL = 'CREATE_GAME_LOCAL';
+export const UPDATE_GAME = 'UPDATE_GAME';
+export const UPDATE_GAME_LOCAL = 'UPDATE_GAME_LOCAL';
+export const GET_GAMES = 'GET_GAMES';
+export const SET_GAMES = 'SET_GAMES';
+export const DELETE_GAME = 'DELETE_GAME';
+export const DELETE_GAME_LOCAL = 'DELETE_GAME_LOCAL';
+export const GET_GAME_BY_ID = 'GET_GAME_BY_ID';
+export const SET_GAME_BY_ID_LOCAL = 'SET_GAME_BY_ID_LOCAL';
+export const SET_GAME_LOADER = 'SET_GAME_LOADER';
+export const SET_GAME_ADDED = 'SET_GAME_ADDED';
