@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { increment, decrement, setCount } from "../actions/counter";
+import { increment, decrement, setCount } from "../slices/counter";
 const Child7 = (props) => {
 
 	const handleIncrement = () => {
