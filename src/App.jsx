@@ -5,12 +5,12 @@ import {
   Link,
   Outlet,
   Route,
-  RouterProvider,
-  unstable_useBlocker as useBlocker,
+  RouterProvider
 } from "react-router-dom";
 import LifeCycle from "./lifecycle";
 import Form, { UncontrolledForm } from "./form";
 import List from "./list";
+import Details from "./detail/index";
 
 let router = createBrowserRouter(
   createRoutesFromElements(
@@ -41,9 +41,10 @@ function Layout() {
           <Link to="/form">Form controlled</Link>&nbsp;&nbsp;
           <Link to="/form/uncontrolled">Form uncontrolled</Link>&nbsp;&nbsp;
           <Link to="/list">List</Link>&nbsp;&nbsp;
+          <Link to="/product/1">Details</Link>&nbsp;&nbsp;
         </div>
       </nav>
-      <div style={{ textAlign: "center", padding: "16px" }}>
+      <div style={{ textAlign: "center", padding: "32px" }}>
         <Outlet />
       </div>
 
