@@ -19,6 +19,7 @@ let router = createBrowserRouter(
       <Route path="form" element={<Form />} />
       <Route path="form/uncontrolled" element={<UncontrolledForm />} />
       <Route path="list" element={<List />} />
+      <Route path="product/:id" element={<Details />} />
     </Route>
   )
 );
@@ -34,14 +35,13 @@ export default function App() {
 function Layout() {
   return (
     <>
-      <nav style={{ display: "flex", backgroundColor: "blue", padding: "16px", justifyContent: "space-between", alignItems: "center" }}>
-        <h3 style={{ color: 'greenyellow' }}>   Routing , Life Cycle, Form and List exmaple </h3>
+      <nav style={{ display: "flex", backgroundColor: "#fc5110", padding: "16px", justifyContent: "space-between", alignItems: "center" }}>
+        <Link to="/"><h2 style={{ color: "whitesmoke" }}> Tkxel </h2></Link>
         <div>
           <Link to="/">Life Cycle</Link>&nbsp;&nbsp;
           <Link to="/form">Form controlled</Link>&nbsp;&nbsp;
           <Link to="/form/uncontrolled">Form uncontrolled</Link>&nbsp;&nbsp;
           <Link to="/list">List</Link>&nbsp;&nbsp;
-          <Link to="/product/1">Details</Link>&nbsp;&nbsp;
         </div>
       </nav>
       <div style={{ textAlign: "center", padding: "32px" }}>

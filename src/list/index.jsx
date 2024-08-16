@@ -1,29 +1,29 @@
 import { useEffect, useState } from "react";
-import {
-    Link,
-} from "react-router-dom";
+import Posts from "./posts";
+
 const List = () => {
-    const [posts, setPost] = useState([]);
+    const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
     useEffect(() => {
-        setLoading(true)
-        fetch('https://jsonplaceholder.typicode.com/posts').then(res => res.json()).then(res => {
-            setPost(res)
-            setLoading(false)
-        })
-
+        loadPosts();
     }, [])
+
+    const loadPosts = async () => {
+        try {
+            setLoading(true);
+            const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+            const json = await res.json();
+            setPosts(json);
+            setLoading(false);
+        } catch (e) {
+            setLoading(false);
+            console.log(e);
+        }
+    }
 
 
     return <div>
-        {loading ? <h2>Loading...</h2> : <div style={{ display: "flex", flexDirection: "column", width: "100%", alignItems: "center", justifyContent: "center" }}>
-            {posts.map(post => {
-                return <div style={{ width: "70vw", backgroundColor: "purple", color: "white", padding: "16px", borderRadius: "10px", margin: "8px 0px", textAlign: "left" }} key={post.id}>
-                    <Link to={`/product/${post.id}`}><h2 style={{ margin: "8px 0px" }}>{post.title}</h2></Link>
-                    <p>{post.body}</p>
-                </div>
-            })}
-        </div>}
+        {loading ? <h2>Loading...</h2> : <Posts posts={posts} />}
     </div>
 }
 
